@@ -1,0 +1,78 @@
+{
+    "TmTPreview": {
+        "host": "10.123.7.56",
+        "port": "8021",
+        "user": "tmt",
+        "pass": "@tmt.io",
+        "remotePath": "tmtdemo.qq.com/branch/master_rem",
+        "includeHtml": true,
+        "cdnUrl": ""
+    },
+
+    "pureUpload": {
+        "host": "10.12.239.208",
+        "port": "36000",
+        "user": "qspace",
+        "password": "qspace123",
+        "remotePath": "",
+        "reversionUrl": "http://wxres.oa.com/publishNoRecord"
+    },
+    "eosftp": {
+        "host": "10.12.154.188",
+        "port": "8021",
+        "user": "o2ogtimg",
+        "pass": "o2ogtimg",
+        "remotePath": "/",
+        "includeHtml": false
+    },
+    "resftp": {
+        "host": "10.12.239.208",
+        "port": "36000",
+        "user": "qspace",
+        "password": "qspace123",
+        "includeHtml": false,
+        "remotePath": "",
+        "reversionUrl": "http://wxres.oa.com/publish"
+    },
+    "migcdn": {
+        "upload_url": "http://inner.up.cdn.qq.com:8080/uploadserver/uploadfile.jsp",
+        "appname": "tmt",
+        "user": "zedhuang",
+        "key": "511F636AA290F82623E4E9ED9BAD6DFB",
+        "isunzip": 1,
+        "remotePath": "",
+        "includeHtml": false,
+        "cdnUrl": ""
+    },
+    "livereload": {
+        "available": true,
+        "port": 8080,
+        "startPath": "html/TmTIndex.html"
+    },
+    "reversion": {
+        "available": true,
+        "tag": "master_rem"
+    },
+    "plugins": {
+        "BuildDevAfter": [
+            "TmTIndex"
+        ],
+        "BuildDistAfter": [],
+        "CdnBetaAfter": [],
+        "CdnDistAfter": [],
+        "TmTPreviewAfter": [
+            "TmTPreview"
+        ]
+    },
+    "lazyDir": [
+        "../slice"
+    ],
+    "supportWebp": false,
+    "supportChanged": true,
+    "supportREM": true,
+    "supportChange": {
+        "available": false,
+        "refName": "master_rem",
+        "commit": "fc7fa29e48e3b044f1a1e958dfdc19a966284829"
+    }
+}
