@@ -1,0 +1,31 @@
+@color-blue: #0171bb;
+@color-red: #fe1d45;
+.nomargin{
+    margin: 0;
+}
+.blend_multiply{
+    mix-blend-mode: multiply;
+}
+.blend_darken{
+    mix-blend-mode: darken;
+}
+.reveal{
+    .page1__sub{
+        position: fixed;
+        bottom: 0;
+        right: 50px;
+        font-size: 14px;
+        color: @color-blue;
+    }
+    .slides section{
+        padding: 0;
+    }
+    .content{
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+    }
+
+}
