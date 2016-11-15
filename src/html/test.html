@@ -5,32 +5,43 @@
     <title>Title</title>
     <script src="../js/lib/velocity.min.js"></script>
     <script src="../js/lib/jquery-1.11.1.min.js"></script>
-    <script src="../js/lib/svg-morpheus.js"></script>
+    <script src="../js/lib/snap.svg.js"></script>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         body {
             text-align: center;
         }
-
-        .logo {
-            width: 333.6px;
-            margin: 100px auto;
+        .blend_multiply{
+            mix-blend-mode: multiply;
         }
     </style>
 </head>
 <body>
-<div class="logo">
-    <svg id="icon" viewBox="0 0 48 48" style="background-color:#ffffff00" version="1.1" xmlns="http://www.w3.org/2000/svg"  xml:space="preserve">
-        <g id="3d_rotation" style="display:none">
-            <path d="M 47.41421356237309 62.58578643762691 L 62.58578643762691 47.41421356237309 C 63.292893218813454 46.707106781186546 64 45 64 44 L 64 20 C 64 19 63.292893218813454 17.292893218813454 62.58578643762691 16.585786437626904 L 47.41421356237309 1.4142135623730947 C 46.707106781186546 0.7071067811865474 45 0 44 0 L 20 0 C 19 0 17.292893218813454 0.7071067811865475 16.585786437626904 1.414213562373095 L 1.414213562373095 16.585786437626904 C 0.7071067811865475 17.292893218813454 0 19 0 20 L 0 44 C 0 45 0.7071067811865475 46.707106781186546 1.414213562373095 47.41421356237309 L 16.585786437626904 62.58578643762691 C 17.292893218813454 63.292893218813454 19 64 20 64 L 44 64 C 45 64 46.707106781186546 63.292893218813454 47.41421356237309 62.58578643762691 Z" fill="#336699"/>
-        </g>
-        <g id="accessibility" style="display:none">
-            <path d="M 24 4 C 26.2 4 28 5.8 28 8 C 28 10.2 26.2 12 24 12 C 21.8 12 20 10.2 20 8 C 20 5.8 21.8 4 24 4 Z" fill="#336699"/>
-        </g>
-    </svg>
-</div>
 <script>
-    var icon = new SVGMorpheus("#icon");
-    icon.to("3d_rotation");
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var s = Snap(width,height);
+    var t1 = s.text(width/2-20,height/2-20,"SVG ANIMATION");
+    t1.attr({
+        "text-anchor":"middle",
+        "font-size": "100px",
+        fill: "#F41D07",
+        "font-family": "Impact",
+        "mix-blend-mode": "multiply",
+        "class": "blend_multiply"
+    });
+    var t2 = s.text(width/2+20,height/2, "THE POSIBILITY");
+    t2.attr({
+        "text-anchor":"middle",
+        "font-size": "100px",
+        fill: "#1BD3E3",
+        "font-family": "Impact",
+        "mix-blend-mode": "multiply",
+        "class": "blend_multiply"
+    });
 </script>
 </body>
 </html>
