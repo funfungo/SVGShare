@@ -1,5 +1,6 @@
 @color-blue: #0171bb;
 @color-red: #fe1d45;
+@import "hljs.css";
 .nomargin{
     margin: 0;
 }
@@ -10,6 +11,7 @@
     mix-blend-mode: darken;
 }
 .reveal{
+    font-family: Impact,"PingFang SC",sans-serif;
     .page1__sub{
         position: fixed;
         bottom: 0;
@@ -27,5 +29,17 @@
         bottom: 0;
         position: fixed;
     }
-
+    .page__title{
+        font-size: 50px;
+        font-weight: bolder;
+    }
+    pre{
+        box-shadow: none;
+    }
+}
+.ui-c-blue{
+    color: @color-blue;
+}
+.ui-c-red{
+    color: @color-red;
 }
