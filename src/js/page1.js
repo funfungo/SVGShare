@@ -38,7 +38,7 @@ paper1_p1.attr({
     fill: COLOR_RED
 });
 paper1_p2.attr({
-    "id":"js_svg01_p2",
+    "id":"js_svg1_p2",
     "class": "blend_darken",
     fill: COLOR_BLUE
 });
