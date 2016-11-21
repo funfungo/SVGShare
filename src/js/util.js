@@ -2,8 +2,8 @@
  * Created by nikkifang on 16/11/16.
  */
 var util = {
-    svgInit: function (index,fullpage) {
-        var paper = Snap("#svg_" + index);
+    svgInit: function (ele,fullpage) {
+        var paper = Snap(ele);
         if(fullpage){
             paper.attr({
                 width : WIDTH,

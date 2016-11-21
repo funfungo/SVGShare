@@ -1,0 +1,1 @@
+var paper_vector = util.svgInit("#js-svg-vector-attr",false);

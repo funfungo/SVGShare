@@ -1,7 +1,7 @@
 /**
  * Created by nikkifang on 16/11/16.
  */
-var paper1 = util.svgInit(1,false);
+var paper1 = util.svgInit("#js-svg-cover",false);
 var textBlueMain = {
     "text-anchor":"middle",
     "font-size": "100px",
@@ -43,5 +43,3 @@ paper1_p2.attr({
     fill: COLOR_BLUE
 });
 
-
-var paper2 = Snap("#svg_2");

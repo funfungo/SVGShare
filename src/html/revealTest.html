@@ -14,24 +14,24 @@
 <body>
 <div class="reveal">
     <div class="slides">
-        <!--BEGIN PAGE1-->
-        <section>
-            <svg id="svg_1"></svg>
+        <!--BEGIN COVER-->
+        <section id="cover">
+            <svg id="js-svg-cover"></svg>
             <div class="page1__sub">
                 请在chrome浏览器下观看
             </div>
         </section>
-        <!--END PAGE1-->
+        <!--END COVER-->
 
-        <section>
-            <section>
-                <div class="page__title-wrap">
-                    <div class="page__title ui-c-blue">矢量图形</div>
-                    <div class="page__sub-title ui-c-blue">VECTOR GRAPHICS</div>
-                </div>
-            </section>
-            <section>
-                <svg version="1.1" id="js_svg_vector" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+        <section id="vector-title">
+            <div class="page__title-wrap">
+                <div class="page__title ui-c-blue">矢量图形</div>
+                <div class="page__sub-title ui-c-blue">VECTOR GRAPHICS</div>
+            </div>
+        </section>
+
+        <section id="vector-intro">
+            <svg version="1.1" id="js-svg-vector-intro" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
 	 viewBox="0 0 960 200" style="enable-background:new 0 0 960 200;" xml:space="preserve">
                     <rect x="40.2" y="25.3" class="st0 js_svg_rect" width="150" height="150"/>
                     <circle class="st0 js_svg_circle" cx="354.4" cy="100.3" r="75"/>
@@ -40,31 +40,33 @@
                     <path class="st0 js_svg_path" d="M923,107.3c-11.5,41.5-51.2,38.8-66.5,29.5C829,120,836.9,77.9,810,63.3
                     	c-21.5-11.6-59-5-67.5,33.5"/>
                 </svg>
-                <div>
-                    <pre><code class="xml" data-noescape data-trim>
-<mark>&lt;rect x="40.2" y="25.3" class="st0 js_svg_rect" width="150" height="150"/&gt;</mark>
-
-&lt;circle class="st0 js_svg_circle" cx="354.4" cy="100.3" r="75"/&gt;
-
-&lt;polygon class="st0 js_svg_polygon" points="593.6,25.3 617.9,74.7 672.4,82.6 633,121.1 642.3,175.3 593.6,149.7 544.8,175.3
-554.1,121.1 514.7,82.6 569.2,74.7 "/&gt;
-
-&lt;path class="st0 js_svg_path" d="M923,107.3c-11.5,41.5-51.2,38.8-66.5,29.5C829,120,836.9,77.9,810,63.3
-c-21.5-11.6-59-5-67.5,33.5"/&gt;
-                    </code></pre>
-                </div>
-                <aside class="notes">
-                    Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-                </aside>
-            </section>
+            <pre>
+                <code class="xml" data-noescape data-trim>
+<span class="js-code-vector-intro_rect fragment">&lt;rect x="40.2" y="25.3" width="150" height="150"/&gt;</span>
+<span class="js-code-vector-intro_circle fragment">&lt;circle cx="354.4" cy="100.3" r="75"/&gt;</span>
+<span class="js-code-vector-intro_polygon fragment">&lt;polygon points="593.6,25.3 617.9,74.7 672.4,82.6 633,121.1 642.3,175.3
+    593.6,149.7 544.8,175.3 554.1,121.1 514.7,82.6 569.2,74.7 "/&gt;</span>
+<span class="js-code-vector-intro_path fragment">&lt;path d="M923,107.3c-11.5,41.5-51.2,38.8-66.5,29.5C829,120,836.9,77.9,810,63.3
+    c-21.5-11.6-59-5-67.5,33.5"/&gt;</span>
+                </code>
+            </pre>
         </section>
 
 
+        <section>
+            <svg id="js-svg-vector-attr">
+
+            </svg>
+            <pre>
+                <code></code>
+            </pre>
+        </section>
     </div>
 </div>
 <script src="../js/config.js"></script>
 <script src="../js/util.js"></script>
-<script src="../js/page1.js"></script>
+<script src="../js/cover.js"></script>
+<!--<script src="../js/page3.js"></script>-->
 <script>
 
 
@@ -74,6 +76,7 @@ c-21.5-11.6-59-5-67.5,33.5"/&gt;
 //        margin: 0,
 //        minScale: 1,
 //        maxScale: 1,
+        controls: false,
         history: true,
         dependencies: [
             {
@@ -84,7 +87,7 @@ c-21.5-11.6-59-5-67.5,33.5"/&gt;
         ]
     });
 
-    Reveal.slide(2.1);
+    Reveal.slide(3);
 
     $(document).on("mouseover", function (e) {
         if (e.target.id === "js_svg1_p1") {
@@ -95,10 +98,11 @@ c-21.5-11.6-59-5-67.5,33.5"/&gt;
             paper1_p2.animate({
                 d: "M103,74C274.4-5.4,612-7,794,80c188.2,89.9,211,510,103.7,581.4C797.4,728.2,413.1,599.2,208,549C24,504-87,162,103,74z"
             }, 1000, mina.bounce);
-        } else if(e.target.id === "js_svg_rect"){
+        } else if (e.target.id === "js_svg_rect") {
 
         }
     });
+
     $(document).on("mouseout", function (e) {
         if (e.target.id === "js_svg1_p1") {
             paper1_p1.animate({
@@ -111,8 +115,21 @@ c-21.5-11.6-59-5-67.5,33.5"/&gt;
         }
     });
 
-    //    var scaleRate = Math.min(WIDTH/960,HEIGHT/700)-0.1;
-    //    $(".wrap").css("transform","scale(" + scaleRate + ")");
+    Reveal.addEventListener('fragmentshown', function (event) {
+        var ele = event.fragment;
+        var id = ele.id;
+        var classString = ele.className;
+
+        //vector-intro
+        if(classString.indexOf("js-code-vector-intro")!== -1){
+            var item = classString.slice(classString.indexOf("_")+1,classString.indexOf(" "));
+            $("#js-svg-vector-intro").children().css("stroke-opacity","0.3");
+            $("#js-svg-vector-intro " + item).css("stroke-opacity","1");
+        }
+
+
+    });
+
 </script>
 </body>
 </html>
