@@ -1,5 +1,6 @@
 @color-blue: #0171bb;
 @color-red: #fe1d45;
+@import "svg";
 @import "hljs.css";
 .nomargin{
     margin: 0;
@@ -10,13 +11,7 @@
 .blend_darken{
     mix-blend-mode: darken;
 }
-.st0 {
-    fill: none;
-    stroke: #0171bb;
-    stroke-opacity: 0.3;
-    stroke-miterlimit: 10;
-    stroke-width: 5px;
-}
+
 .reveal{
     font-family: Impact,"PingFang SC",sans-serif;
     .page1__sub{
@@ -56,12 +51,31 @@
     }
     pre code{
         //white-space: normal;
-        font-size: 18px;
+        font-size: 20px;
         word-break: break-all;
         .current-fragment{
             background-color: yellow;
         }
     }
+    .vector-attr__code{
+        width: 350px;
+        margin: auto;
+    }
+    .line-action__btn-wrap{
+        margin-top: 50px;
+    }
+    .line-action__btn{
+        display: inline-block;
+        text-align: center;
+        background-color: @color-red;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        border-radius: 100%;
+        color: #ffffff;
+        font-size: 20px;
+    }
+
 }
 .ui-c-blue{
     color: @color-blue;
