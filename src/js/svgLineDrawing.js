@@ -27,9 +27,8 @@ SvgLineDrawing.prototype.init = function () {
             var path = paths[i];
             var length = SvgLineDrawing.getLength(path);
             $(path).css("transition", "none")
-                .attr("data-length", length)
-                .css("stroke-dasharray", length)
-                .css("stroke-dashoffset", length);
+                .css("stroke-dasharray", "100%")
+                .css("stroke-dashoffset", "100%");
         }
     }
 };
@@ -40,8 +39,7 @@ SvgLineDrawing.prototype.init = function () {
 SvgLineDrawing.prototype.action = function () {
     for (var i = 0; i < paths.length; i++) {
         var path = $(paths[i]);
-        var length = path.attr("data-length");
-        path.css("stroke-dashoffset", "0")
+        path.css("stroke-dashoffset", "0%")
             .css("transition", "stroke-dashoffset " + this.actionTime + "s ease-in-out");
     }
 };

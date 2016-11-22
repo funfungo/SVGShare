@@ -84,18 +84,31 @@
             background-color: #8e1127;
         }
     }
+    .line-control__control{
+        color: @color-red;
+        margin-top: 50px;
+    }
     .line-control__element{
         overflow: hidden;
     }
     .line-control__title{
         float: left;
-        margin-right: 50px;
+        font-size: 30px;
+    }
+    .line-control__label{
+        display: inline-block;
+        width: 250px;
     }
     .line-control__bar{
-        float: left;
+        float: right;
+        line-height: 30px;
         input[type=range]{
-            width: 500px;
+            width: 550px;
         }
+    }
+    .line-control__value{
+        display: inline-block;
+        margin: 0 10px;
     }
 }
 .ui-c-blue{
