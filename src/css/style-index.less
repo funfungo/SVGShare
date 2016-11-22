@@ -13,6 +13,7 @@
 }
 
 .reveal{
+
     font-family: Impact,"PingFang SC",sans-serif;
     .page1__sub{
         position: fixed;
@@ -64,18 +65,38 @@
     .line-action__btn-wrap{
         margin-top: 50px;
     }
-    .line-action__btn{
+    .line-action__btn {
         display: inline-block;
         text-align: center;
-        background-color: @color-red;
         width: 100px;
         height: 100px;
         line-height: 100px;
-        border-radius: 100%;
         color: #ffffff;
         font-size: 20px;
+        z-index: 2;
+        position: relative;
+        background-color: @color-red;
+        border-radius: 100%;
+        &:hover{
+            color: #ffffff;
+        }
+        &:active{
+            background-color: #8e1127;
+        }
     }
-
+    .line-control__element{
+        overflow: hidden;
+    }
+    .line-control__title{
+        float: left;
+        margin-right: 50px;
+    }
+    .line-control__bar{
+        float: left;
+        input[type=range]{
+            width: 500px;
+        }
+    }
 }
 .ui-c-blue{
     color: @color-blue;
