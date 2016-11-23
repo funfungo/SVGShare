@@ -1,0 +1,107 @@
+.reveal{
+    .line-action__btn-wrap{
+        margin-top: 50px;
+    }
+    .line-action__btn {
+        display: inline-block;
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        color: #ffffff;
+        font-size: 20px;
+        z-index: 2;
+        position: relative;
+        background-color: @color-red;
+        border-radius: 100%;
+        &:hover{
+            color: #ffffff;
+        }
+        &:active{
+            background-color: #8e1127;
+        }
+    }
+    .line-control__control{
+        color: @color-red;
+        font-size: 30px;
+        margin-top: 50px;
+        text-align: left;
+        line-height: 50px;
+    }
+    .line-control__element{
+        overflow: hidden;
+    }
+    .line-control__title{
+        float: left;
+    }
+    .line-control__label{
+        display: inline-block;
+        width: 250px;
+    }
+    .line-control__bar{
+        float: right;
+        input[type=range]{
+            width: 550px;
+        }
+    }
+    .line-control__value{
+        display: inline-block;
+        margin: 0 10px;
+    }
+    .line-control__svg-container{
+        position: relative;
+    }
+    .line-control__getLength{
+        color: @color-blue;
+    }
+    .line-control__getLength-label{
+        display: inline-block;
+        margin-right: 30px;
+    }
+
+    .svg-line-example{
+        //background-color: #082330;
+        .text--line {
+            font-size: 150px;
+        }
+        .text--line2{
+            font-size: 200px;
+        }
+        .text-copy {
+            fill: none;
+            stroke: white;
+            stroke-dasharray: 7% 28%;
+            stroke-width: 3px;
+            animation: stroke-offset 5s linear;
+        }
+        .text-copy:nth-child(1) {
+            stroke: #360745;
+            stroke-dashoffset: 7%;
+        }
+        .text-copy:nth-child(2) {
+            stroke: #D61C59;
+            stroke-dashoffset: 14%;
+        }
+        .text-copy:nth-child(3) {
+            stroke: #E7D84B;
+            stroke-dashoffset: 21%;
+        }
+        .text-copy:nth-child(4) {
+            stroke: #EFEAC5;
+            stroke-dashoffset: 28%;
+        }
+        .text-copy:nth-child(5) {
+            stroke: #1B8798;
+            stroke-dashoffset: 35%;
+        }
+
+        @keyframes stroke-offset {
+            0%{
+                stroke-dashoffset: 35%;
+                stroke-dasharray: 0 87.5%;
+            }
+        }
+
+    }
+    
+}

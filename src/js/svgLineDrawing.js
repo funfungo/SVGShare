@@ -27,8 +27,8 @@ SvgLineDrawing.prototype.init = function () {
             var path = paths[i];
             var length = SvgLineDrawing.getLength(path);
             $(path).css("transition", "none")
-                .css("stroke-dasharray", "100%")
-                .css("stroke-dashoffset", "100%");
+                .css("stroke-dasharray", length)
+                .css("stroke-dashoffset", length);
         }
     }
 };

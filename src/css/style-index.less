@@ -2,6 +2,7 @@
 @color-red: #fe1d45;
 @import "svg";
 @import "hljs.css";
+@import "line";
 .nomargin{
     margin: 0;
 }
@@ -13,9 +14,11 @@
 }
 
 .reveal{
-
-    font-family: Impact,"PingFang SC",sans-serif;
-    .page1__sub{
+    font-family: "Arial","PingFang SC";
+    .cover{
+        font-family: Impact,"PingFang SC",sans-serif;
+    }
+    .cover__sub{
         position: fixed;
         bottom: 0;
         right: 50px;
@@ -62,58 +65,21 @@
         width: 350px;
         margin: auto;
     }
-    .line-action__btn-wrap{
-        margin-top: 50px;
-    }
-    .line-action__btn {
-        display: inline-block;
-        text-align: center;
-        width: 100px;
-        height: 100px;
-        line-height: 100px;
-        color: #ffffff;
-        font-size: 20px;
-        z-index: 2;
-        position: relative;
-        background-color: @color-red;
-        border-radius: 100%;
-        &:hover{
-            color: #ffffff;
+    .reference{
+        color: @color-blue;
+        a{
+            margin-left: 15px;
         }
-        &:active{
-            background-color: #8e1127;
-        }
+        font-size: 16px;
     }
-    .line-control__control{
-        color: @color-red;
-        margin-top: 50px;
-    }
-    .line-control__element{
-        overflow: hidden;
-    }
-    .line-control__title{
-        float: left;
-        font-size: 30px;
-    }
-    .line-control__label{
-        display: inline-block;
-        width: 250px;
-    }
-    .line-control__bar{
-        float: right;
-        line-height: 30px;
-        input[type=range]{
-            width: 550px;
-        }
-    }
-    .line-control__value{
-        display: inline-block;
-        margin: 0 10px;
-    }
+
 }
 .ui-c-blue{
     color: @color-blue;
 }
 .ui-c-red{
     color: @color-red;
+}
+.ui-mr-large{
+    margin-right: 15px;
 }
