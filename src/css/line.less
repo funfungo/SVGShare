@@ -72,7 +72,6 @@
             stroke: white;
             stroke-dasharray: 7% 28%;
             stroke-width: 3px;
-            animation: stroke-offset 5s linear;
         }
         .text-copy:nth-child(1) {
             stroke: #360745;
@@ -95,13 +94,17 @@
             stroke-dashoffset: 35%;
         }
 
-        @keyframes stroke-offset {
-            0%{
-                stroke-dashoffset: 35%;
-                stroke-dasharray: 0 87.5%;
-            }
+    }
+    @keyframes stroke-offset {
+        50%{
+            stroke-dashoffset: 35%;
+            stroke-dasharray: 0 87.5%;
         }
-
+    }
+    .svg-line-example_action{
+        .text-copy {
+            animation: stroke-offset 9s linear infinite;
+        }
     }
     
 }

@@ -30,6 +30,7 @@
             </div>
         </section>
 
+
         <section id="vector-intro">
             <svg class="svg__vector-intro" version="1.1" id="js-svg-vector-intro" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
 	 viewBox="0 0 960 200" style="enable-background:new 0 0 960 200;" xml:space="preserve">
@@ -110,9 +111,6 @@ svg path{
       12.5,118 155.7,118 155.7,35.4 319.7,35.4" />
                 </g>
             </svg>
-            <div class="line-action__btn-wrap">
-                <a href="javascript:;" class="line-action__btn" id="js-btn-lineAction"><span>ACTION</span></a>
-            </div>
         </section>
 
         <section id="line-control">
@@ -144,7 +142,7 @@ svg path{
 
 
         <section id="line-example">
-            <svg height="600" viewBox="0 0 800 600" class="svg-line-example">
+            <svg height="600" viewBox="0 0 800 600" class="svg-line-example" id="js-svg-line-example">
                 <symbol id="s-text">
                     <text text-anchor="middle" x="50%" y="40%" class="text--line">
                         Elastic
@@ -170,6 +168,18 @@ svg path{
             <div class="reference">
                 DEMO:<a href="http://codepen.io/yoksel/pen/XJbzrO" target="_blank">codepen.io/yoksel/pen/XJbzrO</a>
             </div>
+        </section>
+
+        <section id="effect-title">
+            <div class="effect-title__wrap">
+                <div class="effect-title__left"></div>
+                <div class="effect-title__name">MORPHING</div>
+            </div>
+        </section>
+
+
+        <section id="morphing">
+
         </section>
     </div>
 </div>
@@ -231,11 +241,13 @@ svg path{
     var CSSConf = new SvgLineDrawing(deploy);
     $(document).on("click",function (e) {
         var id = e.target.id;
-        if(id === "js-btn-lineAction"){
+        if(id === "js-svg-cssconf-logo"){
             var CSSConf = new SvgLineDrawing(deploy);
             setTimeout(function () {
                 CSSConf.action();
             },100);
+        }else if(id === "js-svg-line-example"){
+            $("#js-svg-line-example").attr("class","svg-line-example svg-line-example_action");
         }
     });
     Reveal.addEventListener('fragmentshown', function (event) {
@@ -254,9 +266,10 @@ svg path{
     });
 
 
-//    Reveal.slide(6);
+    Reveal.slide(7);
 
 </script>
+
 </body>
 </html>
 <body>
