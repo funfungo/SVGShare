@@ -40,10 +40,14 @@ function startMorph() {
             var d = $("#js-morphing-path").attr("d");
             var stringD = d.replace(/\.\d+/gi,'');
             $("#js-morphing-code").text(stringD.replace(/(.{70})/gi,'$1\n'));
-            getD();
+
+            if(flag_morphing) getD();
+
         },100);
     };
-    getD();
+    $("#morphing").on("click",function () {
+        getD();
+    })
 }
 
 startMorph();
