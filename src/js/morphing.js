@@ -49,6 +49,11 @@ function startMorph() {
         getD();
     })
 }
-
+$("#js-svg-morpheus").on("click",function () {
+    var morpheusTest = new SVGMorpheus("#js-svg-morpheus",{
+        rotation: "none"
+    });
+    morpheusTest.to("dog");
+});
 startMorph();
 
