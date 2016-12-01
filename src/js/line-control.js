@@ -19,3 +19,11 @@ lineControl.inputDashOffset.on("input",function () {
     lineControl.dashOffset.text(value);
     lineControl.svgPath.css("stroke-dashoffset",value);
 });
+$("#js-svg-line-morphing").on("click",function () {
+    var cla = $(this).attr("class");
+    if(cla.indexOf("animated") == -1){
+        $(this).attr("class","svg__line-morphing animated");
+    }else {
+        $(this).attr("class","svg__line-morphing");
+    }
+});

@@ -2,6 +2,13 @@ svg{
     path{stroke: @color-blue;}
     overflow:visible;
 }
+//cover
+.svg__cover{
+    path{
+        stroke: none;
+    }
+}
+//intro
 .svg__vector-intro {
     fill: none;
     stroke: #0171bb;
@@ -17,28 +24,194 @@ svg{
         stroke-width: 15px;
     }
 }
+//line
 .svg__css-conf{
     stroke: #0171bb;
-    stroke-width: 2px;
+    stroke-width: 1px;
     fill: transparent;
 }
-.svg__cover{
-    path{
-        stroke: none;
+
+.svg__line-example{
+    //background-color: #082330;
+    .text--line {
+        font-size: 150px;
+    }
+    .text--line2{
+        font-size: 200px;
+    }
+    .text-copy {
+        fill: none;
+        stroke: white;
+        stroke-dasharray: 7% 28%;
+        stroke-width: 3px;
+    }
+    .text-copy:nth-child(1) {
+        stroke: #071d2b;
+        stroke-dashoffset: 7%;
+    }
+    .text-copy:nth-child(2) {
+        stroke: #01596f;
+        stroke-dashoffset: 14%;
+    }
+    .text-copy:nth-child(3) {
+        stroke: #f09e3d;
+        stroke-dashoffset: 21%;
+    }
+    .text-copy:nth-child(4) {
+        stroke: #b22b27;
+        stroke-dashoffset: 28%;
+    }
+    .text-copy:nth-child(5) {
+        stroke: #4a9143;
+        stroke-dashoffset: 35%;
     }
 }
-.svg__text-path{
-    font-size: 14px;
-    fill: @color-blue;
+@keyframes stroke-offset {
+    50%{
+        stroke-dashoffset: 35%;
+        stroke-dasharray: 0 87.5%;
+    }
 }
+.svg__line-example_action{
+    .text-copy {
+        animation: stroke-offset 9s linear infinite;
+    }
+}
+
+.svg__line-morphing{
+    .st0 {
+        fill: none;
+        stroke: @color-blue;
+        stroke-width: 19;
+        stroke-miterlimit: 10;
+    }
+    .st1 {
+        fill: none;
+        stroke: @color-blue;
+        stroke-width: 17;
+        stroke-miterlimit: 10;
+    }
+    .letter {
+        -webkit-transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    .letter-a-0 {
+        stroke-dasharray: 123 221;
+        stroke-dashoffset: 0;
+    }
+    .letter-a-1 {
+        stroke-dasharray: 55;
+        stroke-dashoffset: 55;
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+        -webkit-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+    }
+    .letter-b-0 {
+        stroke-dasharray: 244;
+        stroke-dashoffset: 244;
+    }
+    .letter-d-0 {
+        stroke-dasharray: 204;
+        stroke-dashoffset: 204;
+    }
+    .letter-e-0 {
+        stroke-dasharray: 55;
+        stroke-dashoffset: -55;
+    }
+    .letter-e-1 {
+        stroke-dasharray: 45;
+        stroke-dashoffset: -45;
+    }
+    .letter-e-2 {
+        stroke-dasharray: 55;
+        stroke-dashoffset: -55;
+    }
+    .letter-g {
+        stroke-dasharray: 105 1000;
+        stroke-dashoffset: -267;
+    }
+    .letter-o {
+        stroke-dasharray: 100 1000;
+        stroke-dashoffset: -320;
+    }
+    .letter-r-0 {
+        stroke-dasharray: 136;
+        stroke-dashoffset: 136;
+    }
+    .letter-r-1 {
+        stroke-dasharray: 58;
+        stroke-dashoffset: 58;
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+        -webkit-transition-duration: .5s;
+        transition-duration: .5s;
+    }
+    .letter-t-0 {
+        stroke-dasharray: 17 100;
+        stroke-dashoffset: 83;
+    }
+}
+svg.animated .letter-a-1 {
+    stroke-dasharray: 220;
+    stroke-dashoffset: 0;
+    -webkit-transition-delay: .4s;
+    transition-delay: .4s;
+    -webkit-transition-duration: 5s;
+    transition-duration: 5s;
+}
+svg.animated .letter-a-0 {
+    stroke-dasharray: 220;
+    stroke-dashoffset: -122;
+}
+svg.animated .letter-b-0 {
+    stroke-dashoffset: 0;
+}
+svg.animated .letter-d {
+    stroke-dashoffset: 0;
+}
+svg.animated .letter-e-0, svg.animated .letter-e-1, svg.animated .letter-e-2 {
+    stroke-dashoffset: 0;
+}
+svg.animated .letter-g {
+    stroke-dasharray: 265 1000;
+    stroke-dashoffset: 0;
+}
+svg.animated .letter-o {
+    stroke-dasharray: 320;
+    stroke-dashoffset: 0;
+}
+svg.animated .letter-r-1 {
+    -webkit-transition-delay: .5s;
+    transition-delay: .5s;
+}
+svg.animated .letter-r-0, svg.animated .letter-r-1 {
+    stroke-dashoffset: 0;
+}
+svg.animated .letter-t-0 {
+    stroke-dasharray: 83 1;
+}
+
+
+//path
 .svg__text-path{
     fill: @color-red;
     text-length: 400;
+    font-size: 16px;
 }
+//pattern
 .svg__pattern-morphing{
     transform: scale(0.5);
     transform-origin: left top;
     path{
         stroke: none;
     }
+}
+.svg__mytext{
+    font-size: 200px;
+    font-family: Impact;
+    stroke: @color-blue;
+    stroke-width: 4px;
+    text-anchor: middle;
+    alignment-baseline: middle;
 }

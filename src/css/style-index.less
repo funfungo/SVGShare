@@ -70,13 +70,6 @@
         width: 350px;
         margin: auto;
     }
-    .reference{
-        color: @color-blue;
-        a{
-            margin-left: 15px;
-        }
-        font-size: 16px;
-    }
     .effect-title__wrap{
         text-align: center;
         color: @color-blue;
@@ -124,6 +117,26 @@
     }
     .backgrounds__fix.show{
         opacity: 1;
+    }
+    .backgrounds__fix-line-example1{
+        display: block;
+        opacity: 1;
+    }
+    .reference{
+        display: none;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        z-index: 100;
+        font-size: 18px;
+        bottom: 30px;
+    }
+    .reference a{
+        color: #bbbbbb;
+        &:hover{
+            color: #666666;
+        }
     }
 }
 .ui-c-blue{

@@ -20,28 +20,9 @@
     </style>
 </head>
 <body>
-<script>
-    var width = window.innerWidth;
-    var height = window.innerHeight;
-    var s = Snap(width,height);
-    var t1 = s.text(width/2-20,height/2-20,"SVG ANIMATION");
-    t1.attr({
-        "text-anchor":"middle",
-        "font-size": "100px",
-        fill: "#F41D07",
-        "font-family": "Impact",
-        "mix-blend-mode": "multiply",
-        "class": "blend_multiply"
-    });
-    var t2 = s.text(width/2+20,height/2, "THE POSIBILITY");
-    t2.attr({
-        "text-anchor":"middle",
-        "font-size": "100px",
-        fill: "#1BD3E3",
-        "font-family": "Impact",
-        "mix-blend-mode": "multiply",
-        "class": "blend_multiply"
-    });
-</script>
+<svg xmlns='http://www.w3.org/2000/svg' width="480" height="280" viewBox="0 0 480 280">
+    <text dx="480" dy="140" fill="#000" class="svg__mytext">PATTERN</text>
+
+</svg>
 </body>
 </html>

@@ -23,11 +23,9 @@
 
     var paper = Snap("#js-svg-pattern-morphing");
     var ptn = paper.path()
-        .attr({d:path.circ, fill: color[0]})
+        .attr({d:path.circ, fill: color[0],id: "test"})
         .animate({d:path.rect}, animSpeed, mina.bounce , anim3)
         .pattern(0,0,200,200).attr({patternTransform:"rotate(45)"});
 
     paper.rect(0,0,"100%","100%").attr({fill: ptn});
 })();
-
-
