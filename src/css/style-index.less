@@ -1,5 +1,5 @@
 @color-blue: #0171bb;
-@color-red: #fe1d45;
+@color-red: #e74c3c;
 @import "svg";
 @import "hljs.css";
 @import "line";
@@ -15,12 +15,6 @@
 }
 .hljs{
     color: @color-blue;
-}
-body{
-    background-image: url(../img/logo.png);
-    background-size: 200px;
-    background-repeat: no-repeat;
-    background-position: 95% 95%;
 }
 .reveal{
     font-family: "Arial","PingFang SC";
@@ -68,6 +62,13 @@ body{
         .current-fragment{
             background-color: yellow;
         }
+    }
+    .code-small{
+        padding-top: 10px;
+    }
+    .code-small code{
+        font-size: 12px;
+        line-height: 1;
     }
     section img{
         border: none;

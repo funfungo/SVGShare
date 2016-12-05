@@ -1,11 +1,89 @@
 svg{
-    path{stroke: @color-blue;}
+    //path{stroke: @color-blue;}
     overflow:visible;
 }
 //cover
 .svg__cover{
     path{
         stroke: none;
+    }
+}
+//chick
+@-webkit-keyframes fly {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, 4px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+@-webkit-keyframes eye {
+    0% {
+        opacity: 1;
+    }
+    5% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes wing {
+    0% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.05);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+.reveal .chick{
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    .line{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        path{
+            fill: #553B2B;
+        }
+    }
+    .back{
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        path{
+            fill: #F2C45A;
+        }
+    }
+    &:hover{
+        position: relative;
+        z-index: 1;
+        animation: fly 2s infinite;
+        .wing{
+            animation: wing .2s infinite;
+        }
+        .eye{
+            animation: eye 2s infinite;
+        }
+        .back{
+            top: 2px;
+            left: 4px;
+            opacity: 1;
+        }
     }
 }
 //intro
