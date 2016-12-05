@@ -1,9 +1,14 @@
 @color-blue: #0171bb;
-@color-red: #e74c3c;
+@color-red: #fe1d45;
 @import "svg";
 @import "hljs.css";
 @import "line";
 @import "page";
+@import url('http://fonts.googleapis.com/css?family=Ultra');
+
+body{
+    -webkit-font-smoothing: antialiased;
+}
 .nomargin{
     margin: 0;
 }
@@ -12,9 +17,6 @@
 }
 .blend_darken{
     mix-blend-mode: darken;
-}
-.hljs{
-    color: @color-blue;
 }
 .reveal{
     font-family: "Arial","PingFang SC";
@@ -47,14 +49,7 @@
     .wrap{
         position: relative;
     }
-    .page__title-wrap{
-        padding: 15px 50px;
-        display: inline-block;
-        border: 7px solid @color-blue;
-        &:after{
 
-        }
-    }
     pre code{
         //white-space: normal;
         font-size: 20px;
@@ -146,13 +141,17 @@
             color: #666666;
         }
     }
-}
-.ui-c-blue{
-    color: @color-blue;
-}
-.ui-c-red{
-    color: @color-red;
-}
-.ui-mr-large{
-    margin-right: 15px;
+    .ui-c-blue{
+        color: @color-blue;
+    }
+    .ui-c-red{
+        color: @color-red;
+    }
+    .ui-mr-large{
+        margin-right: 15px;
+    }
+    .ui-pt-50{
+        padding-top: 50px;
+    }
+
 }

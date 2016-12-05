@@ -7,19 +7,104 @@
     <script src="../js/lib/jquery-1.11.1.min.js"></script>
     <script src="../js/lib/snap.svg.js"></script>
     <style>
-        *{
+
+        @import url("http://fonts.googleapis.com/css?family=Sniglet:800");
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            background: white;
             margin: 0;
             padding: 0;
+            height: 100%;
         }
-        body {
-            text-align: center;
+
+        ::selection {
+            background: #582D1B;
         }
-        .blend_multiply{
-            mix-blend-mode: multiply;
+
+        ::-moz-selection {
+            background: #582D1B;
         }
+
+        svg {
+            display: block;
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            max-height: 180px;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            margin: 0 auto;
+            overflow: hidden;
+            background-size: cover;
+        }
+
+        .filtered-1, .filtered-2, .filtered-3, .filtered-4 {
+            font: 800 140px/1 'Sniglet', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 140px;
+        }
+
+        .filtered-3 {
+            filter: url(#filtered-3);
+            -webkit-filter: url(#filtered-3);
+            color: #EF7349;
+            fill: #EF7349;
+        }
+
+
     </style>
 </head>
 <body>
-<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); transform-origin: 0px 0px 0px;"><defs><clipPath id="animationMask_2qWxTdQZug"><rect width="60" height="60" x="0" y="0"></rect></clipPath></defs><g clip-path="url(#animationMask_2qWxTdQZug)" style="user-select: none;"><g transform="matrix(1,0,0,1,30,30)" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" style="display: none;" d=" M-30.188,-30.063 C-30.188,-30.063 30.25,30.063 30.25,30.063 C30.25,30.063 30.25,-30 30.25,-30 C30.25,-30 -30.188,-30.063 -30.188,-30.063z"></path><g stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="0" style="display: none;"><path d=" M-30.188,-30.063 C-30.188,-30.063 30.25,30.063 30.25,30.063 C30.25,30.063 30.25,-30 30.25,-30 C30.25,-30 -30.188,-30.063 -30.188,-30.063z"></path></g></g><g transform="matrix(1,0,0,1,50,50)" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" d=" M-9.96204,-9.92079 C-9.96204,-9.92079 9.9825,9.92079 9.9825,9.92079 C9.9825,9.92079 9.9825,-9.9 9.9825,-9.9 C9.9825,-9.9 -9.96204,-9.92079 -9.96204,-9.92079z" style="display: block;"></path><g stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="0" style="display: block;"><path d=" M-9.96204,-9.92079 C-9.96204,-9.92079 9.9825,9.92079 9.9825,9.92079 C9.9825,9.92079 9.9825,-9.9 9.9825,-9.9 C9.9825,-9.9 -9.96204,-9.92079 -9.96204,-9.92079z"></path></g></g><g transform="matrix(1,0,0,1,30,30)" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" d=" M-9.96204,-9.92079 C-9.96204,-9.92079 9.9825,9.92079 9.9825,9.92079 C9.9825,9.92079 9.9825,-9.9 9.9825,-9.9 C9.9825,-9.9 -9.96204,-9.92079 -9.96204,-9.92079z" style="display: block;"></path><g stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="0" style="display: block;"><path d=" M-9.96204,-9.92079 C-9.96204,-9.92079 9.9825,9.92079 9.9825,9.92079 C9.9825,9.92079 9.9825,-9.9 9.9825,-9.9 C9.9825,-9.9 -9.96204,-9.92079 -9.96204,-9.92079z"></path></g></g><g transform="matrix(1,0,0,1,10,10)" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" d=" M-9.96204,-9.92079 C-9.96204,-9.92079 9.9825,9.92079 9.9825,9.92079 C9.9825,9.92079 9.9825,-9.9 9.9825,-9.9 C9.9825,-9.9 -9.96204,-9.92079 -9.96204,-9.92079z" style="display: block;"></path><g stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="0" style="display: block;"><path d=" M-9.96204,-9.92079 C-9.96204,-9.92079 9.9825,9.92079 9.9825,9.92079 C9.9825,9.92079 9.9825,-9.9 9.9825,-9.9 C9.9825,-9.9 -9.96204,-9.92079 -9.96204,-9.92079z"></path></g></g><g transform="matrix(1,0,0,1,30,10)" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" style="display: block;" d=" M-9.96204,-9.92079 C-9.96204,-9.92079 9.9825,9.92079 9.9825,9.92079 C9.9825,9.92079 9.9825,-9.9 9.9825,-9.9 C9.9825,-9.9 -9.96204,-9.92079 -9.96204,-9.92079z"></path><g stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="0" style="display: block;"><path d=" M-9.96204,-9.92079 C-9.96204,-9.92079 9.9825,9.92079 9.9825,9.92079 C9.9825,9.92079 9.9825,-9.9 9.9825,-9.9 C9.9825,-9.9 -9.96204,-9.92079 -9.96204,-9.92079z"></path></g></g><g transform="matrix(1,0,0,1,50,30)" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" style="display: block;" d=" M-9.96204,-9.92079 C-9.96204,-9.92079 9.9825,9.92079 9.9825,9.92079 C9.9825,9.92079 9.9825,-9.9 9.9825,-9.9 C9.9825,-9.9 -9.96204,-9.92079 -9.96204,-9.92079z"></path><g stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="0" style="display: block;"><path d=" M-9.96204,-9.92079 C-9.96204,-9.92079 9.9825,9.92079 9.9825,9.92079 C9.9825,9.92079 9.9825,-9.9 9.9825,-9.9 C9.9825,-9.9 -9.96204,-9.92079 -9.96204,-9.92079z"></path></g></g><g transform="matrix(1,0,0,1,50,10)" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" style="display: block;" d=" M-9.96204,-9.92079 C-9.96204,-9.92079 9.9825,9.92079 9.9825,9.92079 C9.9825,9.92079 9.9825,-9.9 9.9825,-9.9 C9.9825,-9.9 -9.96204,-9.92079 -9.96204,-9.92079z"></path><g stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="0" style="display: block;"><path d=" M-9.96204,-9.92079 C-9.96204,-9.92079 9.9825,9.92079 9.9825,9.92079 C9.9825,9.92079 9.9825,-9.9 9.9825,-9.9 C9.9825,-9.9 -9.96204,-9.92079 -9.96204,-9.92079z"></path></g></g><g transform="matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,30,10)" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" style="display: block;" d=" M-3.279816660948305,-3.266235864518646 C-3.279816660948305,-3.266235864518646 3.2865527359774154,3.266235864518646 3.2865527359774154,3.266235864518646 C3.2865527359774154,3.266235864518646 3.2865527359774154,-3.259391143118098 3.2865527359774154,-3.259391143118098 C3.2865527359774154,-3.259391143118098 -3.279816660948305,-3.266235864518646 -3.279816660948305,-3.266235864518646z"></path><g stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="0" style="display: block;"><path d=" M-3.279816660948305,-3.266235864518646 C-3.279816660948305,-3.266235864518646 3.2865527359774154,3.266235864518646 3.2865527359774154,3.266235864518646 C3.2865527359774154,3.266235864518646 3.2865527359774154,-3.259391143118098 3.2865527359774154,-3.259391143118098 C3.2865527359774154,-3.259391143118098 -3.279816660948305,-3.266235864518646 -3.279816660948305,-3.266235864518646z"></path></g></g><g transform="matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,50,30)" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" style="display: block;" d=" M-3.279816660948305,-3.266235864518646 C-3.279816660948305,-3.266235864518646 3.2865527359774154,3.266235864518646 3.2865527359774154,3.266235864518646 C3.2865527359774154,3.266235864518646 3.2865527359774154,-3.259391143118098 3.2865527359774154,-3.259391143118098 C3.2865527359774154,-3.259391143118098 -3.279816660948305,-3.266235864518646 -3.279816660948305,-3.266235864518646z"></path><g stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="0" style="display: block;"><path d=" M-3.279816660948305,-3.266235864518646 C-3.279816660948305,-3.266235864518646 3.2865527359774154,3.266235864518646 3.2865527359774154,3.266235864518646 C3.2865527359774154,3.266235864518646 3.2865527359774154,-3.259391143118098 3.2865527359774154,-3.259391143118098 C3.2865527359774154,-3.259391143118098 -3.279816660948305,-3.266235864518646 -3.279816660948305,-3.266235864518646z"></path></g></g><g transform="matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,50,10)" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" style="display: block;" d=" M-0.4335195180911617,-0.43172443594721727 C-0.4335195180911617,-0.43172443594721727 0.43440987883455817,0.43172443594721727 0.43440987883455817,0.43172443594721727 C0.43440987883455817,0.43172443594721727 0.43440987883455817,-0.43081971454666923 0.43440987883455817,-0.43081971454666923 C0.43440987883455817,-0.43081971454666923 -0.4335195180911617,-0.43172443594721727 -0.4335195180911617,-0.43172443594721727z"></path><g stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="4" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="0" style="display: block;"><path d=" M-0.4335195180911617,-0.43172443594721727 C-0.4335195180911617,-0.43172443594721727 0.43440987883455817,0.43172443594721727 0.43440987883455817,0.43172443594721727 C0.43440987883455817,0.43172443594721727 0.43440987883455817,-0.43081971454666923 0.43440987883455817,-0.43081971454666923 C0.43440987883455817,-0.43081971454666923 -0.4335195180911617,-0.43172443594721727 -0.4335195180911617,-0.43172443594721727z"></path></g></g></g></svg>
+
+
+<section class="poster-3">
+    <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 180">
+
+        <defs>
+            <filter id="filtered-3" height="220%">
+                <!-- COLORS -->
+                <feFlood flood-color="#551C0B" result="COLOR-outline"/>
+                <!-- COLORS END-->
+
+                <!-- OUTLINE -->
+                <feMorphology operator="dilate" radius="3" in="SourceAlpha" result="OUTLINE_10"/>
+                <feComposite operator="in" in="COLOR-outline" in2="OUTLINE_10" result="OUTLINE_20"/>
+                <!-- OUTLINE END -->
+
+                <!-- LIGHTING EFFECTS -->
+                <feGaussianBlur stdDeviation="4" in="SourceAlpha" result="LIGHTING-EFFECTS_10"/>
+                <feSpecularLighting surfaceScale="5" specularConstant="0.5" specularExponent="7.5"
+                                    lighting-color="#white" in="LIGHTING-EFFECTS_10" result="LIGHTING-EFFECTS_20">
+                    <fePointLight x="750" y="-50" z="300"/>
+                </feSpecularLighting>
+                <feComposite in2="SourceAlpha" operator="in" in="LIGHTING-EFFECTS_20" result="LIGHTING-EFFECTS_30"/>
+                <feComposite operator="arithmetic" k1="0" k2="1" k3="1" k4="0" in="SourceGraphic"
+                             in2="LIGHTING-EFFECTS_30" result="LIGHTING-EFFECTS_40"/>
+                <!-- LIGHTING EFFECTS END -->
+
+                <!-- COLOR EFFECTS -->
+                <feComponentTransfer in="LIGHTING-EFFECTS_40" result="COLOR-EFFECTS_10">
+                    <feFuncR type="gamma" offset="-1.3" amplitude="10" exponent="4.84"/>
+                    <feFuncB type="gamma" offset="-1.3" amplitude="10.1" exponent="40.84"/>
+                </feComponentTransfer>
+                <!-- COLOR EFFECTS END -->
+
+                <feMerge>
+                    <feMergeNode in="OUTLINE_20"/>
+                    <feMergeNode in="COLOR-EFFECTS_10"/>
+                </feMerge>
+            </filter>
+        </defs>
+        <text class="filtered-3" x="20" y="240">BLOP!</text>
+    </svg>
+</section>
+
+
 </body>
 </html>

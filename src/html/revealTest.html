@@ -481,19 +481,264 @@ C 0 50 0 50 0 0</span>
 
         <section id="filter-intro">
 
+            <pre><code class="html" data-trim data-noescape>
+&lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1"&gt;
+    &lt;defs&gt;
+        &lt;filter id="filter-name"&gt;
+            ...
+            &lt;!-- insert filters here --&gt;
+            ...
+        &lt;/filter&gt;
+        ...
+    &lt;/defs&gt;
+&lt;/svg&gt;
+            </code></pre>
+            <pre class="ui-pt-50"><code class="hljs css" data-trim>
+.selector{
+    filter: url('#filter-name');
+    filter: url('filters.svg#filter-name');
+}
+            </code></pre>
+        </section>
+
+        <section id="filter-name">
+            <div class="page__attribute-title">SVG Filter</div>
+            <ul class="page__attribute-list">
+                <li>feOffset</li>
+                <li>feGaussianBlur</li>
+                <li>feBlend</li>
+                <li>feColorMatrix</li>
+                <li>feComponentTransfer</li>
+                <li>feComposite</li>
+                <li>feConvolveMatrix</li>
+                <li>feDiffuseLighting</li>
+                <li>feDisplacementMap</li>
+                <li>feFlood</li>
+                <li>feImage</li>
+                <li>feMerge</li>
+                <li>feMorphology</li>
+                <li>feSpecularLighting</li>
+                <li>feTile</li>
+                <li>feTurbulence</li>
+                <li>feDistantLight</li>
+                <li>fePointLight</li>
+                <li>...</li>
+            </ul>
+        </section>
+
+
+        <section id="filter-apply">
+            <pre><code class="html" data-noescape data-trim>
+&lt;filter id="drop-shadow"&gt;
+    &lt;feGaussianBlur in="SourceGraphic" stdDeviation="7" result="shadow" /&gt;
+    &lt;feOffset in="shadow" dx="3" dy="4" result="shadow" /&gt;
+    &lt;feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0
+                0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0" result="shadow" /&gt;
+    &lt;feBlend in="SourceGraphic" in2="shadow" /&gt;
+&lt;/filter&gt;
+            </code></pre>    
+        </section>
+
+        <section id="filter-text">
+            <div class="page__filter-text">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+                    <defs>
+                        <filter id="filter-1" filterUnits="userSpaceOnUse">
+                            <!-- COLORS -->
+                            <feFlood flood-color="#663300" result="COLOR-red" />‚
+                            <feFlood flood-color="#D7A500" result="COLOR-y" />
+                            <!-- COLORS END -->
+
+                            <!-- STRIPE FILL -->
+                            <feImage xlink:href="data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.1%22%20id%3D%22Untitled-Seite_x25_201%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%2210px%22%20height%3D%224px%22%3E%0A%3Crect%20fill%3D%22%239F6B00%22%20width%3D%2210%22%20height%3D%222%22%2F%3E%3C%2Fsvg%3E" x="0" y="0" width="10" height="4" result="STRIPE FILL_10"/>
+                            <feTile in="STRIPE FILL_10" result="STRIPE FILL_20"/>
+                            <feComposite operator="in" in="STRIPE FILL_20" in2="SourceAlpha" result="STRIPE FILL_30"/>
+                            <!-- STRIPE FILL END -->
+
+                            <!-- THIN BEVEL -->
+                            <feMorphology operator="dilate" radius="2" in="SourceAlpha" result="THIN-BEVEL_10" />
+                            <feComposite operator="out" in="THIN-BEVEL_10" in2="SourceAlpha" result="THIN-BEVEL_20"/>
+                            <feComposite operator="in" in="COLOR-y" in2="THIN-BEVEL_20" result="THIN-BEVEL_30" />
+                            <!-- THIN BEVEL END -->
+
+                            <!-- OUTER BEVEL -->
+                            <feConvolveMatrix order="8,8" divisor="1"
+                                              kernelMatrix="1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 " in="SourceGraphic" result="OUTER-BEVEL_10" />
+                            <feOffset dx="4" dy="4" in="OUTER-BEVEL_10" result="OUTER-BEVEL_20"/>
+                            <feComposite operator="in" in="COLOR-red" in2="OUTER-BEVEL_20" result="OUTER-BEVEL_30" />
+                            <!-- OUTER BEVEL END -->
+
+                            <!-- INNER BEVEL -->
+                            <feOffset in="SourceAlpha" dx="4" dy="4" result="INNER-BEVEL_10"/>
+                            <feComposite operator="out" in="SourceAlpha" in2="INNER-BEVEL_10" result="INNER-BEVEL_20" />
+                            <feComposite in="COLOR-red" operator="in" in2="INNER-BEVEL_20" result="INNER-BEVEL_30" />
+                            <!--  INNER BEVEL END -->
+
+                            <!-- FAT OUTLINE -->
+                            <feMorphology operator="dilate" radius="6" in="OUTER-BEVEL_30" result="FAT-OUTLINE_10" />
+                            <feComposite operator="in" in="COLOR-y" in2="FAT-OUTLINE_10" result="FAT-OUTLINE_20" />
+                            <!-- FAT OUTLINE END -->
+
+                            <feMerge  result="merge2">
+                                <feMergeNode in="FAT-OUTLINE_20" />
+                                <feMergeNode in="OUTER-BEVEL_30" />
+                                <feMergeNode in="STRIPE FILL_30" />
+                                <feMergeNode in="INNER-BEVEL_30" />
+                                <feMergeNode in="THIN-BEVEL_30" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <text class="filtered-1" x="20" y="85">Pansen!<text>
+                </svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+                    <defs>
+                        <filter id="filter-2">
+                            <feConvolveMatrix order="8,8" divisor="1"
+                                              kernelMatrix="1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 " in="SourceAlpha" result="BEVEL" />
+                            <feOffset dx="4" dy="4" in="BEVEL" result="OFFSET"/>
+
+                            <feMerge>
+                                <feMergeNode in="OFFSET" />
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <text class="filtered-2" x="20" y="85">Extruded</text>
+                </svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+
+                    <defs>
+                        <filter id="filter-3" filterUnits="userSpaceOnUse">
+                            <feImage xlink:href='data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22100px%22%20height%3D%22200px%22%20%20%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3Cpattern%20id%3D%22pattern%22%20patternUnits%3D%22userSpaceOnUse%22%20width%3D%2210%22%20height%3D%2210%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M0%2C8.239V10h1.761L0%2C8.239z%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M5%2C0l5%2C5l0%2C0V3.238L6.762%2C0H5z%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%220%2C3.239%200%2C5%205%2C10%206.761%2C10%20%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%221.762%2C0%200%2C0%2010%2C10%2010%2C8.238%20%22%2F%3E%0A%20%20%20%20%3C%2Fpattern%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url%28%23pattern%29%22%20%2F%3E%0A%3C%2Fsvg%3E' x="0" y="0" width="100" height="200" result="IMAGEFILL"/>
+                            <feTile in="IMAGEFILL" result="TILEPATTERN"/>
+                            <feComposite operator="in" in="TILEPATTERN" in2="SourceAlpha" />
+                        </filter>
+                    </defs>
+                    <text class="filtered-3" x="20" y="95">STRIPES!</text>
+                </svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+                    <defs>
+                        <filter id="filter-4">
+                            <feFlood flood-color="#FF0000" flood-opacity="0.5" result="RED" />
+                            <feFlood flood-color="#00FF00" flood-opacity="0.5" result="GREEN" />
+                            <feFlood flood-color="#0000FF" flood-opacity="0.5" result="BLUE" />
+                            <feComposite operator="in" in="RED" in2="SourceAlpha" result="RED_TEXT"/>
+                            <feComposite operator="in" in="GREEN" in2="SourceAlpha" result="GREEN_TEXT"/>
+                            <feComposite operator="in" in="BLUE" in2="SourceAlpha" result="BLUE_TEXT"/>
+                            <feOffset in="RED_TEXT" dx="-15" dy="0" result="RED_TEXT_OFF"/>
+                            <feOffset in="GREEN_TEXT" dx="15" dy="0"  result="GREEN_TEXT_OFF"/>
+                            <feOffset in="BLUE_TEXT" dx="0" dy="0"  result="BLUE_TEXT_OFF"/>
+                            <feMerge>
+                                <feMergeNode in="RED_TEXT_OFF" />
+                                <feMergeNode in="GREEN_TEXT_OFF"/>
+                                <feMergeNode in="BLUE_TEXT_OFF"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <text class="filtered-4" x="20" y="85">Off Set.</text>
+                </svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+                    <defs>
+                        <filter id="filter-5">
+                            <feTurbulence result="TURBULENCE" baseFrequency="0.08" numOctaves="1" seed="1" />
+                            <feDisplacementMap in="SourceGraphic" in2="TURBULENCE" scale="9" />
+                        </filter>
+                    </defs>
+                    <text class="filtered-5" x="20" y="85">Torn Out</text>
+                </svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+                    <defs>
+                        <filter id="filter-6">
+                            <feMorphology in="SourceAlpha" operator="dilate" radius="2" result="OUTLINE" />
+                            <feComposite operator="out" in="OUTLINE" in2="SourceAlpha" />
+                        </filter>
+                    </defs>
+                    <text class="filtered-6" x="20" y="85">Outlined</text>
+                </svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+                    <defs>
+                        <filter id="filter-7">
+                            <feTurbulence type="fractalNoise" result="TURBULENCE" baseFrequency="0.1" numOctaves="5" seed="2" />
+                            <feComposite operator="in" in="TURBULENCE" in2="SourceAlpha" />
+                        </filter>
+                    </defs>
+                    <text class="filtered-7" x="20" y="85">Noizeee!</text>
+                </svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+                    <defs>
+                        <filter id="filter-8" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse">
+                            <feGaussianBlur stdDeviation="5" in="SourceAlpha" result="BLUR"/>
+
+                            <feSpecularLighting surfaceScale="6" specularConstant="1" specularExponent="30" lighting-color="#white" in="BLUR" result="SPECULAR">
+                                <fePointLight x="40" y="-30" z="200" />
+                            </feSpecularLighting>
+                            <feComposite operator="in" in="SPECULAR" in2="SourceAlpha" result="COMPOSITE"/>
+                            <feMerge>
+                                <feMergeNode in="SourceAlpha" />
+                                <feMergeNode in="COMPOSITE"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <text class="filtered-8" x="20" y="85">Beveled</text>
+                </svg>
+            </div>
+
+        </section>
+
+        <section id="example__blobs ">
+            <div class="blobs">
+                <div class="blob">4</div>
+                <div class="blob">3</div>
+                <div class="blob">2</div>
+                <div class="blob">1</div>
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none">
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                    </filter>
+                </defs>
+            </svg>
+        </section>
+
+        <section id="filter-blob-resolve">
+            <img src="../img/blur-vs-contrast.png" width="500">
+            <div class="page__filter-blob-code fragment">
+                <pre><code class="html" data-noescape data-trim>
+&lt;defs&gt;
+    &lt;filter id="goo"&gt;
+        &lt;feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" /&gt;
+        &lt;feColorMatrix in="blur" mode="matrix" values="1 0 ... 18 -7" result="goo" /&gt;
+        &lt;feBlend in="SourceGraphic" in2="goo" /&gt;
+    &lt;/filter&gt;
+&lt;/defs&gt;
+                </code></pre>
+            </div>
         </section>
 
     </div>
+
+    <!--BEGIN reference-->
     <div class="reference reference_line1">
         <a href="http://codepen.io/metabolism/pen/wGopjQ" target="_blank">
             Reference: http://codepen.io/metabolism/pen/wGopjQ
         </a>
     </div>
     <div class="reference reference_line2">
+        <a href="https://css-tricks.com/gooey-effect/" target="_blank">
+            Reference: https://css-tricks.com/gooey-effect/
+        </a>
+    </div>
+    <div class="reference reference_blobs">
         <a href="http://codepen.io/yoksel/pen/XJbzrO" target="_blank">
             Reference:codepen.io/yoksel/pen/XJbzrO
         </a>
     </div>
+    <!--END reference-->
 
     <div class="backgrounds__fix backgrounds__fix-pattern-intro">
         <svg id="js-svg-pattern-morphing" class="svg__pattern-morphing" width="200%" height="200%" style=""></svg>
@@ -608,7 +853,7 @@ C 0 50 0 50 0 0</span>
 
     });
 
-    Reveal.slide(12);
+    Reveal.slide(29);
 
 </script>
 
