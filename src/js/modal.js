@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var $modal = $(".modal"),
-        $overlay = $(".modal__overlay"),
+        $overlay = $(".slide-background.page__filter-blur"),
         blocked = false,
         unblockTimeout=null
     ;
@@ -15,7 +15,7 @@ $(document).ready(function() {
         if (!blocked) {
         	block(400);
 
-            TweenMax.to($overlay, 0.3, {
+            TweenMax.to($overlay, 0.2, {
                 autoAlpha: 1
             });
 
