@@ -453,7 +453,7 @@ path.animate({
             cx: movePoint.x,
             cy: movePoint.y
         });
-    },4500);
+    },mina.easeinout,4500);
             </code></pre>
         </section>
 
@@ -1064,6 +1064,7 @@ path.animate({
     });
 
 
+    //events
     $(document).on("mouseover", function (e) {
         if (e.target.id === "js_svg1_p1") {
             paperCoverP1.animate({
@@ -1096,7 +1097,6 @@ path.animate({
     var CSSConf = new SvgLineDrawing(deploy);
 
 
-    //event
     $(document).on("click", function (e) {
         var id = e.target.id;
         if (id === "js-svg-cssconf-logo") {
@@ -1137,8 +1137,6 @@ path.animate({
             $("#js-svg-vector-intro").children().css("stroke-opacity", "0.3");
             $("#js-svg-vector-intro " + item).css("stroke-opacity", "1");
         }
-
-
     });
     $("#js-blobs").on("click",function () {
         $(this).toggleClass("blobs_animate");
@@ -1148,7 +1146,8 @@ path.animate({
         $(this).toggleClass("css-blobs_animate");
     });
 
-    Reveal.slide(19);
+//    debug
+//    Reveal.slide(20);
 
 
 </script>
