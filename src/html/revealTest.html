@@ -272,8 +272,8 @@
                 </code></pre>
         </section>
 
-        <section id="svg-attribute">
-            <div class="page__attribute-title">SVG special attribute</div>
+        <section id="svg-attribute" data-background-color="#306589">
+            <div class="page__attribute-title">SVG Special Attribute</div>
             <ul class="page__attribute-list">
                 <li>fill</li>
                 <li>fill-opacity</li>
@@ -311,7 +311,7 @@
             </div>
         </section>
 
-        <section id="line-drawing">
+        <section id="line-drawing" data-background-color="#306589">
             <svg id="js-svg-cssconf-logo" class="svg__css-conf" width="100%" height="500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
                 <path d="M 257.85024,158.16843 754.90716,35.953537 731.06035,405.57906 228.78695,448.8014 z" style="stroke-dasharray: 1678.47, 1678.47; stroke-dashoffset: 0;"></path>
                 <path d="m 259.83736,136.30872 c 0,0 -6.74232,0.97288 -11.61303,5.46502 -3.96751,3.659 -6.12527,9.40831 -7.01729,20.86596 l -36.5158,346.77284 c 0,0 -3.47753,13.41382 10.68151,14.15903 l 517.67468,-21.11485 c 0,0 18.38216,0.74522 19.87257,-19.62369 L 784.07068,11.384991 c 0,0 0.059,-13.07475 -23.20111,-7.2266959 L 259.83736,136.30872 z" style="stroke-dasharray: 1972.67, 1972.67; stroke-dashoffset: 0;"></path>
@@ -489,7 +489,7 @@ C 0 50 0 50 0 0</span>
         </section>
 
         <section id="snap-morphing">
-            <div class="page__attribute-title">Snap.svg.js</div>
+            <div class="page__main-title">Snap.svg.js</div>
             <pre class="fragment"><code class="html" data-trim data-noescape>
 &lt;svg id="js-svg" width="100" height="100"&gt;
     &lt;path id="path1" d="M 0 0 C 50 0 50 0 100 0 ...C 0 50 0 50 0 0" /&gt;
@@ -505,14 +505,28 @@ path.animate({
             </code></pre>
         </section>
 
-        <section id="other-morphing">
-            <div class="page__attribute-title"><a href="https://greensock.com/morphSVG" target="_blank">GreenSock MorphSVGPlugin</a></div>
-            <div class="page__attribute-title page__attribute-title_last"><a href="http://alexk111.github.io/SVG-Morpheus/" target="_blank">SVG-Morpheus</a></div>
+        <section id="other-morphing" data-background-color="#2d6b94">
+            <div class="page__main-title page__main-title_rw"><a href="https://greensock.com/morphSVG" target="_blank">GreenSock MorphSVGPlugin</a></div><br>
+            <div class="page__main-title page__main-title_rw"><a href="http://alexk111.github.io/SVG-Morpheus/" target="_blank">SVG-Morpheus</a></div>
         </section>
 
-        <section id="morphing-menu">
-            <p data-height="585" data-theme-id="light" data-slug-hash="zoEJQm" data-default-tab="result" data-user="funfungo" data-embed-version="2" data-pen-title="Open/Close SVG Drawer" class="codepen">See the Pen <a href="http://codepen.io/funfungo/pen/zoEJQm/">Open/Close SVG Drawer</a> by funfungo (<a href="http://codepen.io/funfungo">@funfungo</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-            <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+        <section id="example_menu">
+            <nav id="menu" class="menu">
+                <div class="morph-shape" data-morph-open="M158.5,0H0v53.1c0,0,19.6-4.6,66-0.2s60.5-3.8,92.5-0.1V0z" data-morph-trans="M158.5,0H0v53.1c0,0,35.4,15.4,82,13.8s76.5-14.1,76.5-14.1V0z">
+                    <svg width="100%" height="100%" viewBox="0 0 158.5 61.2" preserveAspectRatio="none">
+                        <path id="js-svg-menu-path" fill="none" d="M158.5,0H0v55.6c20.9-12.8,38.5,19.5,73.5-1.9s73.2-7.2,85,0V0z" />
+                    </svg>
+                </div>
+                <button class="menu__label" id="js-menu"><i class="fa fa-fw fa-bars"></i><span>Open Menu</span></button>
+                <ul class="menu__inner" >
+                    <li><a href="#"><i class="fa fa-fw fa-bookmark-o"></i><span>Reading List</span></a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-hdd-o"></i><span>Saved Items</span></a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-image"></i><span>All Media</span></a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-heart-o"></i><span>Favorites</span></a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>Messages</span></a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-bell-o"></i><span>Notifications</span></a></li>
+                </ul>
+            </nav>
         </section>
 
         <!--END MORPHING-->
@@ -548,6 +562,7 @@ path.animate({
     d="M62.9 14.9c-25-7.74-56.6 4.8-60.4 24.3-3.73 19.6 21.6..."&gt;
     &lt;/path&gt;
 &lt;/defs&gt;
+
 &lt;text&gt;
     &lt;textPath xlink:href="#p1" textLength="400"  startOffset="<span id="js-path-startOffset">250</span>"&gt;
     svg textPath元素可以让文字随着指定路径排列
@@ -556,9 +571,9 @@ path.animate({
                 </code></pre>
 </section>
 
-        <section id="SMIL">
-            <div class="page__attribute-title">SMIL</div>
-            <div class="fragment page__attribute-title page__attribute-title_last">Snap.svg.js</div>
+        <section id="SMIL" data-background-color="#306589">
+            <div class="page__main-title">SMIL</div>
+            <div class="fragment page__main-title">Snap.svg.js</div>
         </section>
 
         <section id="object-path" class="overflow-visible">
@@ -568,12 +583,17 @@ path.animate({
             </svg>
             <pre><code class="javascript">
     Snap.animate(0, followPath.length, function (val) {
+
+        //获取路径上相应长度点的信息
         var movePoint = objectPath.path1.getPointAtLength(val);
+
+        //设定元素位置为相应点的坐标
         objectPath.cicle.attr({
             cx: movePoint.x,
             cy: movePoint.y
         });
-    },mina.easeinout,4500);
+
+    }, mina.easeinout, 4500);
             </code></pre>
         </section>
 
@@ -602,11 +622,13 @@ path.animate({
 
         <section id="pattern-intro" class="page__pattern-intro">
             <pre><code class="html" data-noescape>
+    &lt;!--define patterns 定义图案--&gt;
     &lt;defs&gt;
         &lt;pattern id="ashano-EU" width="64" height="64"&gt;
             &lt;path d="M50 50c0-5.523 4.477-10 10-10s17 10-10 10..." /&gt;
         &lt;/pattern&gt;
     &lt;/defs&gt;
+
     &lt;rect width="100%" height="100%" fill="url(#ashano-EU)" /&gt;
                 </code></pre>
         </section>
@@ -683,7 +705,7 @@ path.animate({
             </code></pre>
         </section>
 
-        <section id="filter-name">
+        <section id="filter-name" data-background-color="#306589">
             <div class="page__attribute-title">SVG Filter</div>
             <ul class="page__attribute-list">
                 <li>feOffset</li>
@@ -869,7 +891,7 @@ path.animate({
         </section>
 
         <section id="filter-blur">
-            <div class="page__attribute-title">GaussianBlur</div>
+            <div class="page__main-title">GaussianBlur</div>
              <pre><code class="html" data-noescape>
  &lt;defs&gt;
     &lt;filter id="fuzzy"&gt;
@@ -1045,6 +1067,11 @@ path.animate({
                 Refer To Yoksel's Demo
             </a>
         </div>
+        <div class="reference reference_menu">
+            <a href="http://codepen.io/jchoura/pen/yYeQdz" target="_blank">
+                Refer To  John Choura Jr.'s Demo
+            </a>
+        </div>
         <div class="reference reference_pattern-shine">
             <a href="http://codepen.io/yoksel/pen/VjZGGg" target="_blank">
                 Refer To Yoksel's Demo
@@ -1202,6 +1229,8 @@ path.animate({
     $("#js-css-blobs").on("click",function () {
         $(this).toggleClass("css-blobs_animate");
     });
+
+
 
 //    debug
 //    Reveal.slide(20);
