@@ -1,4 +1,12 @@
 .reveal {
+    color: @color-blue;
+
+    .page__cover-name{
+        width: 100%;
+        position: absolute;
+        top: 60%;
+        font-size: 20px;
+    }
     .page__title-wrap{
         padding: 15px 50px;
         display: inline-block;
@@ -57,7 +65,6 @@
         cursor: pointer;
         transition: .3s ease-in-out;
     }
-    color: @color-blue;
     .page__title{
         font-size: 50px;
         font-weight: bolder;
@@ -76,9 +83,12 @@
     }
     .page__main-title{
         padding: 5px 20px;
-        font-family: Impact;
+        font-family: Impact, "PingFang SC", sans-serif;
         font-size: 70px;
         margin-bottom: 60px;
+    }
+    .page__main-title_tide{
+        margin-bottom: 40px;
     }
     .page__main-title_rw{
         float: right;
@@ -105,6 +115,9 @@
             margin-bottom: 0;
         }
         //display: block;
+    }
+    .page__desc{
+        margin-bottom: 20px;
     }
     .page__attribute-title{
         text-align: right;

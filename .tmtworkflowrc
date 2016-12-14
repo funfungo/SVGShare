@@ -69,7 +69,7 @@
     ],
     "supportWebp": false,
     "supportChanged": true,
-    "supportREM": true,
+    "supportREM": false,
     "supportChange": {
         "available": false,
         "refName": "master_rem",

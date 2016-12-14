@@ -141,7 +141,8 @@
 
         <!--BEGIN COVER-->
 
-        <section id="cover" class="cover">
+        <section id="cover" class="cover" style="height: 700px;">
+            <!--<div class="page__cover-name">方潇仪</div>-->
             <svg id="js-svg-cover" class="svg__cover"></svg>
             <div class="cover__sub" style="display: none;">
                 请在chrome浏览器下观看
@@ -402,7 +403,8 @@
             </div>
         </section>
         
-        <section id="line-length">
+        <section id="path-length">
+            <div class="page__main-title page__main-title_tide">path</div>
             <pre><code class="html">
 &lt;svg width="800" viewBox="0 0 581 98"&gt;
     &lt;path id="path"
@@ -416,6 +418,12 @@
 var path = document.getElementByID("path");
 path.getTotalLength();
             </code></pre>
+        </section>
+
+        <section id="other-length">
+            <div class="page__main-title page__main-title_tide">rect, circle, polygon...</div>
+            <div class="fragment page__desc">转换</div>
+            <div class="fragment page__desc">计算</div>
         </section>
 
         <section id="example__line1">
@@ -502,7 +510,7 @@ C 0 50 0 50 0 0</span>
         </section>
 
         <section id="snap-morphing">
-            <div class="page__main-title">Snap.svg.js</div>
+            <div class="page__main-title page__main-title_tide">Snap.svg.js</div>
             <pre class="fragment"><code class="html" data-trim data-noescape>
 &lt;svg id="js-svg" width="100" height="100"&gt;
     &lt;path id="path1" d="M 0 0 C 50 0 50 0 100 0 ...C 0 50 0 50 0 0" /&gt;
@@ -904,7 +912,7 @@ path.animate({
         </section>
 
         <section id="filter-blur">
-            <div class="page__main-title">GaussianBlur</div>
+            <div class="page__main-title page__main-title_tide">GaussianBlur</div>
              <pre><code class="html" data-noescape>
  &lt;defs&gt;
     &lt;filter id="fuzzy"&gt;
@@ -1246,7 +1254,7 @@ path.animate({
 
 
 //    debug
-//    Reveal.slide(20);
+    Reveal.slide(41);
 
 
 </script>
