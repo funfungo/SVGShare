@@ -25,7 +25,7 @@ var paperCoverT2 = paperCover.text(SECTION_HW-180,SECTION_HH+50,"VECTORS");
 paperCoverT1.attr(textBlueMain);
 paperCoverT2.attr(textBlueMain);
 
-var paperCoverT3 = paperCover.text(SECTION_HW-50,SECTION_HH-30, "THE POSSIBILITY OF");
+var paperCoverT3 = paperCover.text(SECTION_HW-10,SECTION_HH-30, "THE POSSIBILITIES OF");
 var paperCoverT4 = paperCover.text(SECTION_HW+100,SECTION_HH+50, "SVG ANIMATION");
 paperCoverT3.attr(textRedMain);
 paperCoverT4.attr(textRedMain);
