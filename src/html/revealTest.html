@@ -625,6 +625,15 @@ path.animate({
                     <polyline points="0,20 10,0 20,20" fill="#fe1d45"></polyline>
                 </g>
             </svg>
+            <pre><code class="javasript" data-noescape>
+                Element.getPointAtLength(length);
+
+                {
+                    x: x coordinate, //x坐标
+                    y: y coordinate, //y坐标
+                    alpha: angle of derivative //切线角度
+                }
+            </code></pre>
         </section>
 
         <!--BEGIN FOLLOW PATH-->
@@ -702,6 +711,10 @@ path.animate({
                 <div class="effect-title__left"></div>
                 <div class="effect-title__name">FILTER<span class="effect-title__sub-name">滤镜</span></div>
             </div>
+        </section>
+        
+        <section>
+            <img src="../img/filter.jpg" width="100%">
         </section>
 
         <section id="filter-intro">
@@ -913,7 +926,7 @@ path.animate({
 
         <section id="filter-blur">
             <div class="page__main-title page__main-title_tide">GaussianBlur</div>
-             <pre><code class="html" data-noescape>
+             <pre class="fragment"><code class="html" data-noescape>
  &lt;defs&gt;
     &lt;filter id="fuzzy"&gt;
         &lt;feGaussianBlur in="SourceGraphic" <mark>stdDeviation="10,0"</mark>/&gt;
@@ -994,9 +1007,7 @@ path.animate({
             </div>
         </section>
 
-        <section id="example__filter-blur2">
-
-        </section>
+        <section id="example__filter-blur2"></section>
 
         <section id="example__blobs">
             <div class="blobs" id="js-blobs">
@@ -1072,6 +1083,12 @@ path.animate({
 
         <!--END FILTER-->
 
+
+        <section id="end" data-background-color="#306589">
+            <div class="page__end">
+                THE END
+            </div>
+        </section>
 
     </div>
 
