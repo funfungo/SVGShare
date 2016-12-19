@@ -138,14 +138,12 @@
 
     <div class="slides">
 
-
         <!--BEGIN COVER-->
 
         <section id="cover" class="cover" style="height: 700px;">
-            <!--<div class="page__cover-name">方潇仪</div>-->
             <svg id="js-svg-cover" class="svg__cover"></svg>
-            <div class="cover__sub" style="display: none;">
-                请在chrome浏览器下观看
+            <div class="cover__sub" style="display: block;">
+                方潇仪
             </div>
         </section>
 
@@ -310,9 +308,6 @@
         </section>
 
         <!--END INTRODUCTION-->
-
-
-
 
 
 
@@ -1087,7 +1082,7 @@ path.animate({
 
         <section id="end" data-background-color="#306589">
             <div class="page__end">
-                THE END
+                THANKS
             </div>
         </section>
 
@@ -1190,11 +1185,11 @@ path.animate({
     //events
     $(document).on("mouseover", function (e) {
         if (e.target.id === "js_svg1_p1") {
-            paperCoverP1.animate({
+            paperCoverP1.stop().animate({
                 d: "M63,53.3C187-43.1,750-2,898,227c104.2,161.3,85,261-298,369c-28.7,8.1-318.1,141.1-490,0C15,518-51,142,63,53.3z"
             }, 1000, mina.bounce);
         } else if (e.target.id === "js_svg1_p2") {
-            paperCoverP2.animate({
+            paperCoverP2.stop().animate({
                 d: "M103,74C274.4-5.4,612-7,794,80c188.2,89.9,211,510,103.7,581.4C797.4,728.2,413.1,599.2,208,549C24,504-87,162,103,74z"
             }, 1000, mina.bounce);
         } else if (e.target.id === "js_svg_rect") {
@@ -1204,11 +1199,11 @@ path.animate({
 
     $(document).on("mouseout", function (e) {
         if (e.target.id === "js_svg1_p1") {
-            paperCoverP1.animate({
+            paperCoverP1.stop().animate({
                 d: "M63,53.3C115.6,5.8,171.6,37,181.6,99.1c6.4,40-10,114.8-39.3,124.4c-28.4,9.3-38.1-26-67.4-43.1C33.3,156.2,23.7,88.9,63,53.3z"
             }, 300, mina.easeout);
         } else if (e.target.id === "js_svg1_p2") {
-            paperCoverP2.animate({
+            paperCoverP2.stop().animate({
                 d: "M758.2,488.3C774.1,370.9,874,460,898.6,532c15.3,44.9,39.4,118.3-0.9,129.5c-38.9,10.8-105.3-14.7-145.6-34.6C695.1,598.6,750,548.5,758.2,488.3z"
             }, 300, mina.easeout);
         }
